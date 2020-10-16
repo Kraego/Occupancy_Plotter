@@ -32,4 +32,4 @@ class Plotter:
         plt.show()
 
     def plot_to_room(self, world_data_points, color):
-        self.occupancy.plot(world_data_points, color + 'o')
+        self.occupancy.plot(world_data_points[0], world_data_points[1], color + 'o')

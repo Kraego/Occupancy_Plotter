@@ -4,8 +4,9 @@ import numpy as np
 
 
 def __calculate_robot_coordinate(alpha, l):
-    x = math.sin(math.radians(alpha)) * l
-    y = math.cos(math.radians(alpha)) * l
+    alpha_rads = math.radians(alpha)
+    x = math.sin(alpha_rads) * l
+    y = math.cos(alpha_rads) * l
     return x, y
 
 
@@ -13,18 +14,19 @@ def transform_to_world(coords_robot, xoffset, yoffset, theta):
     points = len(coords_robot[0])
     transformed_coords_x = []
     transformed_coords_y = []
+    theta_rads = math.radians(theta)
 
-    transformation_matrix = np.array([[math.cos(theta), -math.sin(theta), xoffset],
-                             [math.sin(theta), math.cos(theta), yoffset],
+    transformation_matrix = np.array([[math.cos(theta_rads), -math.sin(theta_rads), xoffset],
+                             [math.sin(theta_rads), math.cos(theta_rads), yoffset],
                              [0, 0, 1]])
 
     for point in range(points):
         x = coords_robot[0][point]
         y = coords_robot[1][point]
         robot_point = np.array([[x], [y], [1]])
-        transformation_matrix.dot(robot_point)
-        transformed_coords_x.append(robot_point[0][0])
-        transformed_coords_y.append(robot_point[1][0])
+        result = transformation_matrix.dot(robot_point)
+        transformed_coords_x.append(result[0])
+        transformed_coords_y.append(result[1])
 
     return transformed_coords_x, transformed_coords_y
 
