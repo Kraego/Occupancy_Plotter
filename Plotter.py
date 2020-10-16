@@ -25,11 +25,11 @@ class Plotter:
 
         axis.set_title(title)
         axis.grid()
-        axis.plot(data[0], data[1], color + 'o')
+        axis.plot(data[0], data[1], color + 'o', markersize=1)
         self.plotNbr += 1
 
     def plot(self):
         plt.show()
 
     def plot_to_room(self, world_data_points, color):
-        self.occupancy.plot(world_data_points[0], world_data_points[1], color + 'o')
+        self.occupancy.plot(world_data_points[0], world_data_points[1], color + 'o', markersize=1)
