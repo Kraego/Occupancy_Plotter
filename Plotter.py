@@ -13,7 +13,7 @@ class Plotter:
         self.occupancy.set_title('Absolut Position in Room')
         self.occupancy.grid()
 
-    def add_to_robot_subplot(self, data, color='r', title='untitled', x_min=-100, x_max=100, y_min=-100, y_max=100):
+    def add_to_robot_subplot(self, data, color='r', title='untitled'):
         if self.plotNbr == 0:
             axis = self.ax0
         elif self.plotNbr == 1:

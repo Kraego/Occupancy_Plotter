@@ -19,11 +19,9 @@ def transform_to_world(robot_coordinates, x_offset, y_offset, theta):
     transformed_y = []
     theta_rads = math.radians(theta)
 
-    transformation_matrix = np.array([
-                                        [math.cos(theta_rads), -math.sin(theta_rads), x_offset],
-                                        [math.sin(theta_rads), math.cos(theta_rads),  y_offset],
-                                        [0,                             0,                   1]
-                                     ])
+    transformation_matrix = np.array([[math.cos(theta_rads), -math.sin(theta_rads), x_offset],
+                                      [math.sin(theta_rads), math.cos(theta_rads),  y_offset],
+                                      [0,                             0,                   1]])
 
     for point in range(points):
         x = robot_coordinates[0][point]
