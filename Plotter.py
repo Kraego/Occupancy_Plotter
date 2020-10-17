@@ -14,7 +14,6 @@ class Plotter:
         self.occupancy.grid()
 
     def add_to_robot_subplot(self, data, color='r', title='untitled', x_min=-100, x_max=100, y_min=-100, y_max=100):
-        plt.axis((x_min, x_max, y_min, y_max))
         if self.plotNbr == 0:
             axis = self.ax0
         elif self.plotNbr == 1:
@@ -26,6 +25,7 @@ class Plotter:
 
         axis.set_title(title)
         axis.grid()
+        axis.plot(0, 0, 'x', markersize=6)
         axis.plot(data[0], data[1], color + 'o', markersize=1)
         self.plotNbr += 1
 
