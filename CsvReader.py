@@ -2,15 +2,16 @@ import csv
 
 CSV_DELIMITER = ','
 
-'''
-    Read csv file, in Format 
-    "x1,y1
-    x2,y2"
 
-    :param path: path to the csv
-    :return: tuple(list[x], list[y]] 
-'''
 def read_csv(path):
+    """
+        Read csv file, in Format
+        "x1,y1
+        x2,y2"
+
+        :param path: path to the csv
+        :return: tuple(list[x], list[y]]
+    """
     data_points = []
 
     with open(path, encoding='utf-8-sig') as csv_file:

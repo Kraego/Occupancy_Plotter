@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from matplotlib.gridspec import GridSpec
 
 
 class Plotter:
@@ -14,14 +13,16 @@ class Plotter:
         self.occupancy.set_title('Absolut Position in Room')
         self.occupancy.grid()
 
-    def add_to_robot_subplot(self, data, color='r', title='untitled', xmin=-100, xmax=100, ymin=-100, ymax=100):
-        plt.axis((xmin, xmax, ymin, ymax))
+    def add_to_robot_subplot(self, data, color='r', title='untitled', x_min=-100, x_max=100, y_min=-100, y_max=100):
+        plt.axis((x_min, x_max, y_min, y_max))
         if self.plotNbr == 0:
             axis = self.ax0
         elif self.plotNbr == 1:
             axis = self.ax1
         elif self.plotNbr == 2:
             axis = self.ax2
+        else:
+            raise Exception('Too many plots allowed = 3')
 
         axis.set_title(title)
         axis.grid()
