@@ -6,5 +6,5 @@ Usage see main
 
 [Angle of scan], [distance to object]
 
-Angle of scann ... degrees - from robots x-axis
-distance to object ... distance to object detected by LIDAR
+* Angle of scann ... degrees - from robots x-axis
+* distance to object ... distance to object detected by LIDAR
