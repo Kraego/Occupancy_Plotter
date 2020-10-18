@@ -10,7 +10,7 @@ class Plotter:
         self.ax0 = self.figure.add_subplot(gs[1, 0])
         self.ax1 = self.figure.add_subplot(gs[1, 1])
         self.ax2 = self.figure.add_subplot(gs[1, 2])
-        self.occupancy.set_title('Absolut Position in Room')
+        self.occupancy.set_title('Occupancy Map')
         self.occupancy.grid()
 
     def add_to_robot_subplot(self, data, color='r', title='untitled'):
