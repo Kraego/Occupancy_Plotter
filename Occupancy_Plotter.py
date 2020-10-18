@@ -8,8 +8,8 @@ DEBUG_TRANSFORMATION = False
 
 def __calculate_robot_coordinate(alpha, distance):
     alpha_rads = math.radians(alpha)
-    x = math.sin(alpha_rads) * distance
-    y = math.cos(alpha_rads) * distance
+    x = math.cos(alpha_rads) * distance
+    y = math.sin(alpha_rads) * distance
     return x, y
 
 
