@@ -1,5 +1,5 @@
 # Occupancy_Plotter
-Prints an Occupancy Grid for the given csv File.
+Prints an Occupancy Grid for the given csv Files.
 
 Usage see main.
 
